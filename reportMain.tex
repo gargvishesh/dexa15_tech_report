@@ -1,0 +1,201 @@
+% This is "sig-alternate.tex" V2.0 May 2012
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%% FOR REPORT %%%%
+
+ \documentclass[12pt]{article}
+ \usepackage{times,alltt,xspace}
+ \usepackage{epsfig,subfig,graphicx}
+ \usepackage{algorithm}
+ \usepackage{algpseudocode}
+ \usepackage{amsmath,amsfonts,amstext,amssymb,textcomp}
+ \usepackage{multicol}
+ %\usepackage{enumitem}
+ \usepackage{url}
+ \newtheorem{lemma}{Lemma}
+ \newtheorem{theorem}{Theorem}
+ \newtheorem{conjecture}{Conjecture}
+ \newtheorem{corollary}{Corollary}
+ \newtheorem{proof}{Proof}
+ \usepackage{setspace}
+ \usepackage{txfonts}
+ \usepackage{xcolor,colortbl}
+ \usepackage{booktabs}
+ \usepackage{tikz}
+ \usepackage[]{caption, subfig}
+
+ \setlength{\textheight}{9.5in}
+ \setlength{\columnsep}{2.0pc}
+ \setlength{\textwidth}{6.8in}
+ % \setlength{\footheight}{0.0in}
+ \setlength{\topmargin}{-0.25in}
+ \setlength{\headheight}{0.0in}
+ \setlength{\headsep}{0.0in}
+ \setlength{\oddsidemargin}{-.2in}
+ \setlength{\parindent}{1pc}
+ 
+
+\renewcommand{\dblfloatpagefraction}{1}
+\renewcommand{\dbltopfraction}{1}
+\newcommand{\comment}[1]{}
+\newcommand{\jhcomment}[1]{}
+\newcommand{\adcomment}[1]{}
+\renewcommand{\dblfloatpagefraction}{1}
+\renewcommand{\dbltopfraction}{1}
+
+
+\newcommand{\model}{DRAM\_HARD}
+\newcommand{\modelExplicit}{DRAM\_SOFT}
+\newcommand{\modelPcmRam}{PCM\_RAM}
+\newcommand{\hashsize}{H}
+\newcommand{\aggsize}{A}
+\newcommand{\hjcount}{N_j}
+\newcommand{\gbcount}{N_g}
+\newcommand{\hjlen}{L_j}
+\newcommand{\gblen}{L_g}
+\newcommand{\FlashsortWrites} {W_{sort\_uniform}}
+\newcommand{\MPFlashsortWrites} {W_{sort\_non\_uniform}}
+\def\baselinestretch{0.9807} 
+\definecolor{c1}{RGB}{239,247,245}
+\definecolor{c2}{RGB}{188,189,220}
+\definecolor{c3}{RGB}{117,107,177}
+\newcolumntype{x}{>{\columncolor{c1}}c}
+\newcolumntype{y}{>{\columncolor{c2}}c}
+\newcolumntype{z}{>{\columncolor{c3}}c}
+
+
+\sloppy
+
+
+\begin{document}
+
+
+
+\pagenumbering{arabic}
+
+\input{./src/reportTitle}
+ \input{./src/abstract}
+ \input{./src/intro}
+ \input{./src/framework}
+ \input{./src/sort}
+ \input{./src/join}
+ \input{./src/groupby}
+ \input{./src/expts}
+ \input{./src/integration}
+ \input{./src/relwork}
+ \input{./src/conc}
+ 
+% \input{2_problem}
+% \input{3_bounds}
+% \input{4_compile}
+% \input{5_runtime}
+% \input{6_experiments}
+%
+% \input{7_related}
+% \input{8_discussion}
+% \input{./report/9_conclusion}
+% \input{ack}
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+
+\bibliographystyle{abbrv}
+\bibliography{./src/sigproc}
+%\input{9_references}
+
+  \newpage
+% \input{./report/appendix}
+
+\comment
+{
+% sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+\balancecolumns
+
+%\newpage
+%\input{review}
+%\newpage
+%\input{review}
+}
+
+
+
+\end{document}
